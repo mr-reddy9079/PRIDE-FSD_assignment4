@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <style>
+        .navbar {
+            border-bottom: solid 1px #e5e5e5;
+            height: 8.5vh;
+        }
+
+        .navbar-brand {
+            margin-left: 25px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: 16px;
+        }
+
+        .hero-section {
+            color: #FEFCFF;
+            background-image: url('https://res.cloudinary.com/dmrzseo7n/image/upload/v1724942877/Done_aduupm.jpg');
+            background-size: cover;
+            height: 30vh;
+            width: 100%;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero-section h1 {
+            font-family: 'Bebas Neue';
+            font-weight: 100;
+        }
+
+        .benefits-section {
+            margin: 20px 38px;
+        }
+
+        .benefits-container {
+            padding: 10px;
+            border-color: #e5e5e5;
+            border-style: solid;
+            border-radius: 7px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 1 48%;
+            margin-bottom: 15px;
+        }
+
+        .popular-products {
+            margin: 20px 38px;
+        }
+
+        .product-card {
+            border-color: #e5e5e5;
+            border-style: solid;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            /* Fixed height for consistency */
+            object-fit: cover;
+            /* Ensures the image covers the area without stretching */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .product-card-content {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 14px;
+            }
+
+            .hero-section {
+                height: 40vh;
+                width: 100%;
+            }
+
+            .benefits-container {
+                flex-direction: column;
+            }
+
+            .benefit-item {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+            }
+
+            .popular-products {
+                margin: 10px;
+            }
+
+            .product-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .product-card img {
+                height: 150px;
+            }
+
+            .product-title,
+            .product-review,
+            .product-price {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 768px) {
+
+            .benefits-container,
+            .popular-products {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .benefit-item {
+                flex: 1 1 45%;
+            }
+
+            .product-card {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            .benefit-item {
+                flex: 1 1 30%;
+            }
+
+            .product-card {
+                width: 45%;
+            }
+
+            .d-flex {
+                gap: 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .benefit-item {
+                flex: 1 1 22%;
+            }
+
+            .product-card {
+                width: 22%;
+            }
+
+            .d-flex {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="#">Delivery</a>
+        <a class="navbar-brand" href="#">Payment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link text-light" href="#">Call: +99812345678</a>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        English
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="hero-section">
+        <h1>Welcome to Our Shop</h1>
+        <p>Your satisfaction is our priority</p>
+    </div>
+
+    <!--Benefits Section-->
+    <div class="benefits-section">
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <button class="benefit-icon btn"><i class="fa fa-truck fa-2x"></i></button>
+                <p class="benefit-title">Fast Delivery</p>
+                <p class="benefit-description">Get your products delivered quickly.</p>
+            </div>
+            <div class="benefit-item">
+                <button class="benefit-icon btn"><i class="fa fa-credit-card fa-2x"></i></button>
+                <p class="benefit-title">Secure Payment</p>
+                <p class="benefit-description">Your payment information is safe with us.</p>
+            </div>
+            <div class="benefit-item">
+                <button class="benefit-icon btn"><i class="fa fa-thumbs-up fa-2x"></i></button>
+                <p class="benefit-title">Quality Products</p>
+                <p class="benefit-description">We offer only the best products.</p>
+            </div>
+            <div class="benefit-item">
+                <button class="benefit-icon btn"><i class="fa fa-headset fa-2x"></i></button>
+                <p class="benefit-title">24/7 Support</p>
+                <p class="benefit-description">We're here to help whenever you need us.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Popular Products Section-->
+    <div class="popular-products">
+        <h2 class="text-center mb-4">Popular Products</h2>
+        <div class="d-flex flex-wrap justify-content-around">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021117/hmgoepprod-removebg-preview_a9v67y.png" alt="Product 1">
+                <div class="product-card-content">
+                    <p class="product-title">Polo-Shirt</p>
+                    <p class="product-price">$25.00</p>
+                    <p class="product-review">★★★★☆</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021117/0c1190c94c844c70c7e8081acd44ac853b69e959-removebg-preview_tsafjv.png" alt="Product 2">
+                <div class="product-card-content">
+                    <p class="product-title">Winter-coat</p>
+                    <p class="product-price">$30.00</p>
+                    <p class="product-review">★★★☆☆</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021118/WhatsApp_Image_2024-08-30_at_17.53.30_44f682e5-removebg-preview_pveyme.png" alt="Product 3">
+                <div class="product-card-content">
+                    <p class="product-title">Jean-shorts</p>
+                    <p class="product-price">$40.00</p>
+                    <p class="product-review">★★★★★</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021117/4-removebg-preview_tblcgd.png" alt="Product 4">
+                <div class="product-card-content">
+                    <p class="product-title">School Bag</p>
+                    <p class="product-price">$20.00</p>
+                    <p class="product-review">★★☆☆☆</p>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021117/61of8vZY4VL._SL1144_-removebg-preview_fphxte.png" alt="Product 5">
+                <div class="product-card-content">
+                    <p class="product-title">Mac Pouch</p>
+                    <p class="product-price">$22.00</p>
+                    <p class="product-review">★★★★☆</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021118/Products-removebg-preview_bhouts.png" alt="Product 6">
+                <div class="product-card-content">
+                    <p class="product-title">Sofa</p>
+                    <p class="product-price">$90.00</p>
+                    <p class="product-review">★★★★★</p>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021119/WhatsApp_Image_2024-08-30_at_17.53.55_9a5b2b4b-removebg-preview_mnk2rs.png" alt="Product 7">
+                <div class="product-card-content">
+                    <p class="product-title">Smart-Watch</p>
+                    <p class="product-price">$22.00</p>
+                    <p class="product-review">★★★☆☆</p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img src="https://res.cloudinary.com/dmrzseo7n/image/upload/v1725021117/mnm_Are_Headphones_Analog_Or_Digital_Audio_Devices_large2-1-removebg-preview_harfa1.png" alt="Product 8">
+                <div class="product-card-content">
+                    <p class="product-title">Head-set</p>
+                    <p class="product-price">$25.00</p>
+                    <p class="product-review">★★★★★</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
